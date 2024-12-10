@@ -8,7 +8,6 @@ Este é um projeto de e-commerce desenvolvido com **React** e **Material-UI**, c
 - Filtro de produtos por nome e descrição utilizando um campo de busca.
 - Adição de produtos ao carrinho de compras.
 - Página de detalhes do produto com observações personalizadas.
-- Checkout simples com visualização do resumo da compra.
 
 ## Tecnologias Utilizadas
 
