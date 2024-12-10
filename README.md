@@ -27,7 +27,7 @@ Embora o projeto tenha a maioria das funcionalidades planejadas, algumas funcion
 
 - Testes Unitários: Embora o código tenha sido estruturado para ser modular e escalável, não foram implementados testes unitários ou de integração. Isso foi uma decisão para focar na entrega das funcionalidades principais e pode ser uma melhoria futura.
   
-- Documentação com StoryBook, pela falta de conhecimento nas tecnologias utilizadas o storybook seria mais um desafio para mim, por isso decidi deixa-lo de fora.
+- Documentação com StoryBook, pela falta de conhecimento nas tecnologias utilizadas o storybook seria mais um desafio para mim,mais um que eu gostaria de ter, porém, contando com o tempo decidi deixa-lo de fora.
 
 - Responsividade Completa: A responsividade foi parcialmente implementada, mas algumas telas podem exigir ajustes para se adaptarem de forma otimizada a diferentes tamanhos de tela. O foco foi dado à navegação e interação básica, mas ajustes finos podem ser feitos em telas menores.
 
