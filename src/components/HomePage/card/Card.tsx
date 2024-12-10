@@ -17,8 +17,13 @@ export default function CardComponent({ product }: Props) {
         <Typography variant="h6" sx={styles.title}>
           {product.name}
         </Typography>
-        <Typography sx={styles.description}>Descrição do produto 1</Typography>
-        <Typography sx={styles.price}>R$40,80</Typography>
+        <Typography sx={styles.description}>{product.details}</Typography>
+        <Typography sx={styles.price}>
+          {product.price.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </Typography>
       </CardContent>
       <CardMedia
         component={"img"}
