@@ -3,10 +3,6 @@ import {
   Badge,
   Box,
   Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid2,
   InputAdornment,
   Stack,
   TextField,
@@ -17,15 +13,16 @@ import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import theme from "../theme/theme";
-import CardComponent from "../components/HomePage/Card";
-import { useNavigate } from "react-router-dom";
+import CardList from "../components/HomePage/cardList/CardList";
+import { useSearchContext } from "../contexts/searchContext";
+
 export default function HomePage() {
   const classes = useStyles();
+  const { searchTerm, setSearchTerm } = useSearchContext();
 
   const [expanded, setExpanded] = useState(false);
   const handleFocus = () => setExpanded(true);
   const handleBlur = () => setExpanded(false);
-  const navigate = useNavigate();
 
   return (
     <Box sx={classes.root}>
@@ -54,6 +51,8 @@ export default function HomePage() {
                 ),
               },
             }}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Button>
             <Badge badgeContent="4">
@@ -62,20 +61,7 @@ export default function HomePage() {
           </Button>
         </Stack>
       </AppBar>
-      <Box sx={classes.cardContainer}>
-        <Typography variant="h4" sx={classes.category}>
-          Categoria
-        </Typography>
-        <Grid2
-          container
-          spacing={theme.spacing(2)}
-          onClick={() => navigate("/teste")}
-        >
-          <Grid2 sx={{ width: "100%" }}>
-            <CardComponent />
-          </Grid2>
-        </Grid2>
-      </Box>
+      <CardList />
     </Box>
   );
 }

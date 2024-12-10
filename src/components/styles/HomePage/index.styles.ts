@@ -42,22 +42,10 @@ const useStyles = () => ({
       width: "480px",
     },
   },
-  cardContent: {
-    display: "flex",
-    flexDirection: "column",
-    gap: (theme: Theme) => theme.spacing(1),
-    flex: 1,
-    width: "100%",
-  },
   headerTitle: {
     color: "#261A00",
     fontSize: "24px",
     fontWeight: "bold",
-  },
-  category: {
-    color: "#1F1B13",
-    fontSize: "24px",
-    fontWeight: "semibold",
   },
   search: {
     backgroundColor: "#FFF8F5",

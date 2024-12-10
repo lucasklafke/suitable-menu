@@ -1,23 +1,30 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import useStyles from "./index.styles";
+import type { Product } from "../cardList/CardList";
 
-export default function CardComponent() {
+type Props = {
+  product: Product;
+};
+
+export default function CardComponent({ product }: Props) {
   const styles = useStyles();
-
+  if (!product) {
+    return null;
+  }
   return (
     <Card sx={styles.card}>
       <CardContent sx={styles.cardContent}>
         <Typography variant="h6" sx={styles.title}>
-          Sushi
+          {product.name}
         </Typography>
         <Typography sx={styles.description}>Descrição do produto 1</Typography>
         <Typography sx={styles.price}>R$40,80</Typography>
       </CardContent>
       <CardMedia
         component={"img"}
-        sx={{ width: "180px", height: "auto" }}
+        sx={{ width: "40%", height: "auto" }}
         style={{ aspectRatio: "1" }}
-        image="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+        image={product.url_image}
       />
     </Card>
   );
