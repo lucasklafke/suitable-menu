@@ -46,6 +46,10 @@ const useStyles = () => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "13px",
     },
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
+    maxHeight: "4em",
+    textOverflow: "ellipsis",
   },
   price: {
     color: "#4B6546",
