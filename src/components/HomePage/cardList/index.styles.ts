@@ -1,10 +1,10 @@
-import { Padding } from "@mui/icons-material";
 import type { Theme } from "@mui/material";
 import theme from "../../../theme/theme";
 
 const useStyles = () => ({
   container: {
     width: "fit-content",
+    gap: (theme: Theme) => theme.spacing(2),
   },
   cardContent: {
     display: "flex",

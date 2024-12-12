@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useSearchContext } from "../../../contexts/searchContext";
 import useStyles from "./index.styles";
 import theme from "../../../theme/theme";
@@ -19,13 +19,14 @@ import { Link } from "react-router-dom";
 type Props = {
   shouldShowSearch: boolean;
 };
-export default function Header({ shouldShowSearch }: Props) {
+const Header = ({ shouldShowSearch }: Props) => {
   const styles = useStyles();
   const { searchTerm, setSearchTerm } = useSearchContext();
   const { cartItems } = useCartContext();
   const [expanded, setExpanded] = useState(false);
   const handleFocus = () => setExpanded(true);
   const handleBlur = () => setExpanded(false);
+
   return (
     <AppBar sx={styles.header} variant="elevation" position="static">
       <Link to={"/"} style={{ textDecoration: "none" }}>
@@ -67,4 +68,6 @@ export default function Header({ shouldShowSearch }: Props) {
       </Stack>
     </AppBar>
   );
-}
+};
+
+export default memo(Header);

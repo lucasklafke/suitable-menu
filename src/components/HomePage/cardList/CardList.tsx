@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Grid2, Stack, Typography } from "@mui/material";
 import useSWR from "swr";
-import CardComponent from "../card/Card";
+import CardComponent from "../card/CardComponent";
 import theme from "../../../theme/theme";
 import { Link } from "react-router-dom";
 import useStyles from "./index.styles";
@@ -90,10 +90,8 @@ export default function CardList() {
 
   return Object.entries(groupedProducts).map(([type, products]) => (
     <Stack key={type} sx={styles.categoryList}>
-      <Typography variant="h4" sx={styles.category}>
-        {type}
-      </Typography>
-      <Grid2 container spacing={theme.spacing(2)} sx={styles.container}>
+      <Typography sx={styles.category}>{type}</Typography>
+      <Grid2 container sx={styles.container}>
         {products.map((product) => (
           <Grid2 key={product.id}>
             <Link

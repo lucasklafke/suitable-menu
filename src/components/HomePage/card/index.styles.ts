@@ -59,6 +59,10 @@ const useStyles = () => ({
       fontSize: "16px",
     },
   },
+  cardMedia: {
+    width: "40%",
+    height: "auto",
+  },
 });
 
 export default useStyles;
